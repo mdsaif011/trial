@@ -1,0 +1,123 @@
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    #header{
+        height: 50px;
+        background-color: grey;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    li{
+        list-style-type: none;
+        height: 25px;
+    }
+
+    .menu{
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .menu li a:hover{
+        color: rgb(156, 77, 77);
+    }
+
+    #logo{
+        font-size: 20px;
+        color: #fff;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    .Services{
+        position: relative;
+    }
+
+    .services-dropdown{
+        position: absolute;
+        background-color: lightgray;
+        width: 80px;
+        padding: 6px;
+        top: 25px;
+        display: none;
+    }
+
+    .services-dropdown li{
+        width: 80px;
+        padding: 5px 0;
+        
+    }
+
+    .services-dropdown li a:hover{
+        color: orange;
+    }
+
+    .Services:hover .services-dropdown{
+        display: block;
+    }
+
+    #checkbox_toogle,.hamburger{
+        display: none;
+    }
+
+    @media (max-width:750px){
+        .menu{
+            display: none;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            background-color: lightgrey;
+            text-align: center;
+        }
+       
+        .hamburger{
+            display: block;
+            padding-right: 10px;
+            font-size: 30px;
+        }
+        input[type='checkbox']:checked~.menu{
+            display: block;
+        }
+
+        .services-dropdown{
+            background-color: gray;
+            left: 55%;
+        }
+    }
+</style>
+
+<div id="header">
+    <div id="logo">Uncodemy.com</div>  
+    <ul class="nav-link">
+        <input type="checkbox" id="checkbox_toogle">
+        <label for="checkbox_toogle" class="hamburger">&#9776;</label>
+        <div class="menu">
+            <li><a href="#">Home</a>
+                <!-- <ul class="services-dropdown">
+                    <li><a href="#">Price</a></li>
+                    <li><a href="#">Price</a></li>
+                </ul> -->
+            </li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="Services"><a href="#">Services</a>
+                <ul class="services-dropdown">
+                    <li><a href="#">React js</a></li>
+                    <li><a href="#">Node js</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Navigate</a></li>   
+        </div>
+    </ul>
+    
+</div>
